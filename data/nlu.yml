@@ -1,0 +1,1128 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi there
+    - greetings
+    - how are you
+    - what's up
+    - morning
+    - evening
+    - afternoon
+    - hi everyone
+    - hello everybody
+    - hey folks
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - take care
+    - catch you later
+    - until next time
+    - farewell
+    - have a good one
+    - see you soon
+    - goodbye for now
+    - catch you on the flip side
+    - take it easy
+    - pleasant day to you
+    - see ya
+    - later
+    - bye for now
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - certainly
+    - absolutely
+    - definitely
+    - sure thing
+    - you got it
+    - yeah
+    - yep
+    - right
+    - that's right
+    - sounds perfect
+    - I agree
+    - that works
+    - okay
+    - alright
+    - understood
+    - will do
+    - count me in
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - definitely not
+    - absolutely not
+    - nope
+    - disagree
+    - that's incorrect
+    - wrong
+    - that's not right
+    - I'm not interested
+    - that won't work
+    - not at all
+    - negative
+    - under no circumstances
+    - not quite
+    - I pass
+    - let's not
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - couldn't be better
+    - on top of the world
+    - living the dream
+    - fantastic
+    - terrific
+    - feeling blessed
+    - feeling fantastic
+    - in high spirits
+    - feeling awesome
+    - life is good
+    - doing great
+    - feeling positive
+    - ecstatic
+    - overjoyed
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+    - feeling down
+    - feeling blue
+    - feeling depressed
+    - feeling terrible
+    - having a rough time
+    - having a bad day
+    - everything is wrong
+    - nothing is going right
+    - feeling miserable
+    - in a bad mood
+    - feeling low
+    - discouraged
+    - heartbroken
+    - devastated
+    - struggling
+    - feeling hopeless
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+    - are you artificial?
+    - are you AI?
+    - what are you?
+    - who am I talking to?
+    - is this automated?
+    - is this a real person?
+    - are you a computer?
+    - are you automated?
+    - is this a chatbot?
+    - are you virtual?
+    - are you an AI assistant?
+    - are you a virtual assistant?
+    - talking to a machine?
+    - talking to AI?
+    - human or machine?
+
+- intent: payment_faqs
+  examples: |
+    - What payment methods do you accept?
+    - I want to pay with a credit card.
+    - Can I pay through a bank transfer?
+    - Do you accept PayPal?
+    - Can I use Apple Pay or Google Pay?
+    - Are you accepting Venmo for payments?
+    - I can pay using credit card, debit card, and bank transfer.
+    - How can I pay the debt?
+    - Teach me how to pay it.
+    - I want to make payment. How?
+    - What's the process for making a payment?
+    - How do I submit a payment?
+    - What are my payment options?
+    - Is there an online payment system?
+    - Can I pay in person?
+    - Do you take cash payments?
+    - Is there a payment portal?
+    - Where can I make my payment?
+    - How do I pay my bill?
+    - What's the easiest way to pay?
+    - Do you have a mobile payment option?
+    - Can I pay through your website?
+    - Is there a payment processing fee?
+    - Do you charge extra for certain payment methods?
+
+# General Queries: Payment Inquiries
+- intent: ask_next_payment_due
+  examples: |
+    - When is my next payment due?
+    - Can you tell me when my next payment is due?
+    - I need to know the due date for my next payment.
+    - When do I have to make my next payment?
+    - What's my payment deadline?
+    - When should I pay by?
+    - What's the last day to make my payment?
+    - When will my next payment be processed?
+    - What date is my payment scheduled for?
+    - When do I need to pay by?
+    - Is my payment due soon?
+    - Can you check my next due date?
+    - What's my upcoming payment date?
+    - When will I be charged next?
+    - What's my billing date?
+    - When does my next payment need to be in by?
+    - Could you confirm my payment due date?
+    - What's the deadline for my next payment?
+    - When will my account be billed next?
+
+- intent: ask_payment_methods
+  examples: |
+    - How can I pay my debt?
+    - What are the accepted payment methods?
+    - Which payment options do you provide?
+    - What ways can I pay?
+    - Tell me about your payment methods
+    - What forms of payment do you take?
+    - How do you accept payments?
+    - What payment types are available?
+    - Can you list all payment options?
+    - What are my choices for paying?
+    - How many ways can I pay?
+    - Tell me the payment methods
+    - What payment systems do you use?
+    - How can I send you money?
+    - What are the different ways to pay?
+    - Give me information about payments
+    - How do your payments work?
+    - Explain the payment process
+    - What payment channels are available?
+    - How can I transfer money to you?
+
+- intent: ask_setup_automatic_payment
+  examples: |
+    - Can I set up automatic payments?
+    - How do I set up automatic payments?
+    - Is automatic payment an option?
+    - I want to automate my payments. Is that possible?
+    - How do I schedule recurring payments?
+    - Can you help me set up auto-pay?
+    - I want my payments to be automatic
+    - Can payments be automatically deducted?
+    - How do I enable auto-debit?
+    - Setup monthly automatic payments
+    - I want to schedule regular payments
+    - Can you automate my monthly payments?
+    - How do I start auto-pay?
+    - Is there a way to automate my payments?
+    - Can I schedule recurring transfers?
+    - How to enable automatic billing?
+    - Set up monthly auto-deductions
+    - Can you automatically charge my card?
+    - How do I arrange standing instructions?
+    - Enable auto-payment feature
+
+- intent: ask_change_payment_method
+  examples: |
+    - How do I change my payment method?
+    - Can I change the way I pay?
+    - I want to update my payment method. How can I do that?
+    - Need to switch payment methods
+    - Can I use a different card?
+    - How to update my payment details?
+    - I want to pay with a different account
+    - Change my payment information
+    - Update billing method
+    - Switch to a different payment option
+    - Need to update my card details
+    - How do I change my billing info?
+    - Want to use another payment method
+    - Change my default payment option
+    - Update my payment preferences
+    - Switch payment accounts
+    - Change my card on file
+    - Need to update payment settings
+    - How to modify payment method?
+    - Replace current payment option
+
+- intent: ask_partial_payment
+  examples: |
+    - Can I make a partial payment?
+    - Am I allowed to make a partial payment?
+    - Is it possible to pay part of the debt?
+    - can i pay half?
+    - can i pay by installment?
+    - can i make the payment little by little?
+    - Is it okay to pay a portion now?
+    - Can I split my payment?
+    - I can only pay part of it
+    - What if I can't pay the full amount?
+    - Can I pay some now and some later?
+    - Is there a minimum payment amount?
+    - I want to pay what I can afford
+    - Can I make smaller payments?
+    - Pay a percentage now
+    - Make partial contribution
+    - Pay in portions
+    - Split the payment up
+    - Can I break up the payment?
+    - Pay bit by bit
+
+# Payment Plans and Options
+- intent: ask_repayment_options
+  examples: |
+    - What options do I have for repayment?
+    - Can you provide the repayment options?
+    - How can I repay the debt?
+    - What are my repayment choices?
+    - Tell me about payment plans
+    - What repayment plans are available?
+    - How flexible are the repayment terms?
+    - What are my options to pay this off?
+    - Show me different payment plans
+    - What kind of payment arrangements exist?
+    - How can I structure my repayment?
+    - What are the ways to repay?
+    - Explain my repayment choices
+    - What payment schedules are available?
+    - How can I organize my repayment?
+    - Different ways to pay off debt
+    - What repayment methods exist?
+    - Show payment plan options
+    - What are my choices for repaying?
+    - Available repayment structures
+
+- intent: ask_negotiation_payment_terms
+  examples: |
+    - Can I negotiate my payment terms?
+    - Is there room to negotiate my payment terms?
+    - How can I negotiate my payment?
+    - Can we discuss payment terms?
+    - Is it possible to adjust the terms?
+    - Want to negotiate better terms
+    - Can we work out different terms?
+    - Flexibility in payment terms?
+    - Can we modify the payment terms?
+    - Want to discuss payment options
+    - Can we revise the terms?
+    - Is there room for negotiation?
+    - Can we arrange different terms?
+    - Want to talk about payment structure
+    - Possible to change payment terms?
+    - Can we adjust the agreement?
+    - Want to discuss term modifications
+    - Can we reach different terms?
+    - Negotiate payment schedule
+    - Discuss payment flexibility
+
+- intent: ask_consequences_missed_payment
+  examples: |
+    - What are the consequences of missing a payment?
+    - What happens if I miss a payment?
+    - Will there be any penalties if I miss a payment?
+    - Are there late payment fees?
+    - What's the penalty for missing payments?
+    - Consequences of late payment?
+    - What if I can't pay on time?
+    - Are there charges for missed payments?
+    - What happens if I'm late?
+    - Will I be penalized for late payment?
+    - What are the late payment charges?
+    - Missing payment implications
+    - Cost of delayed payment
+    - Impact of payment default
+    - What if I skip a payment?
+    - Consequences of payment delay
+    - Effect of missing due date
+    - Results of payment failure
+    - Penalty for payment default
+    - Late payment implications
+
+- intent: ask_financial_assistance
+  examples: |
+    - Do you offer hardship programs or financial assistance?
+    - Is there any financial assistance available for me?
+    - Can I apply for hardship programs?
+    - Do you have payment assistance?
+    - Any help for financial difficulties?
+    - What support is available?
+    - Need help with payments
+    - Financial hardship options
+    - Available assistance programs
+    - Help with debt payment
+    - Support for financial struggles
+    - Any debt relief programs?
+    - Need financial help options
+    - Available payment support
+    - Assistance with debt
+    - Programs for payment help
+    - Financial aid availability
+    - Options for payment assistance
+    - Help with financial burden
+    - Support during hardship
+
+# Debt Amount and History
+- intent: ask_total_debt_amount
+  examples: |
+    - How much do I owe in total?
+    - What is the total amount of my debt?
+    - Can you tell me the full amount I owe?
+    - What's my current balance?
+    - Total outstanding amount?
+    - How much is my debt?
+    - What's my total balance?
+    - Current amount owed?
+    - How much do I need to pay?
+    - What's my outstanding debt?
+    - Total debt figure
+    - How much is outstanding?
+    - What's my current debt?
+    - Full amount payable?
+    - What's my total liability?
+    - Show me my total debt
+    - Total amount due?
+    - Current debt status
+    - Balance update needed
+    - Check total amount owed
+
+- intent: ask_debt_breakdown
+  examples: |
+    - Can you provide a breakdown of my debts?
+    - I need a breakdown of my debt amounts
+    - How is my debt structured?
+    - Show me debt details
+    - Break down my balance
+    - Itemize my debt
+    - List all my debts
+    - Detail my outstanding amounts
+    - Show debt components
+    - What makes up my total debt?
+    - Give me debt details
+    - Explain my debt structure
+    - Show individual debts
+    - Debt composition details
+    - List debt categories
+    - Separate debt amounts
+    - Show debt distribution
+    - Detail debt breakdown
+    - Split up of total debt
+    - Individual debt amounts
+
+- intent: ask_interest_rate
+  examples: |
+    - What is the interest rate on my debt?
+    - How much interest am I paying on my debt?
+    - What interest rate is applied to my debt?
+    - Current interest rate?
+    - What's my rate?
+    - Interest percentage?
+    - How much is the interest?
+    - What rate am I paying?
+    - Show me interest details
+    - Interest rate breakdown
+    - What's my current rate?
+    - Rate of interest applied
+    - Interest charges explanation
+    - How is interest calculated?
+    - Interest rate information
+    - Show interest percentages
+    - What's the APR?
+    - Annual interest rate?
+    - Monthly interest rate?
+    - Interest rate structure
+
+- intent: ask_changes_in_debt
+  examples: |
+    - Have there been any recent changes to my debt amount?
+    - Did my debt amount change recently?
+    - Were there any updates to my debt total?
+    - Any recent modifications?
+    - Has my debt changed?
+    - Recent debt updates?
+    - Changes to my balance?
+    - New debt calculations?
+    - Any balance changes?
+    - Recent account updates?
+    - Changes in total amount?
+    - Debt amount modifications
+    - Latest debt changes
+    - Balance adjustment check
+    - Recent debt revisions
+    - New debt figures
+    - Account balance updates
+    - Changes to amount owed
+    - Latest debt status
+    - Balance change history
+
+# Specific Queries: Disputes and Resolutions
+- intent: ask_dispute_account_error
+  examples: |
+    - I believe there's an error in my account. How do I dispute it?
+    - How can I dispute an error in my account?
+    - What do I do if I find an error on my account?
+    - There's a mistake in my account
+    - Wrong amount showing
+    - Account information incorrect
+    - How to report account errors?
+    - Need to fix account mistake
+    - Dispute incorrect balance
+    - Wrong charges on account
+    - Account shows wrong information
+    - How to challenge account error?
+    - Need to correct account details
+    - Report wrong information
+    - Account discrepancy found
+    - Dispute wrong balance
+    - Account information wrong
+    - Error in my statement
+    - Incorrect account details
+    - Want to dispute charges
+
+- intent: ask_billing_dispute_process
+  examples: |
+    - What is the process for resolving billing disputes?
+    - How do you handle billing disputes?
+    - How can I get a billing issue resolved?
+    - Steps to dispute a bill
+    - Billing dispute procedure
+    - How to challenge a bill?
+    - Process for bill disagreement
+    - Dispute resolution steps
+    - How to contest charges?
+    - Billing complaint process
+    - Dispute wrong billing
+    - Resolution procedure
+    - Bill challenge process
+    - Steps to resolve billing issue
+    - How to file billing dispute
+    - Dispute resolution procedure
+    - Billing error resolution
+    - Wrong bill resolution
+    - Dispute handling process
+    - Bill correction procedure
+
+- intent: ask_dispute_resolution_time
+  examples: |
+    - How long will it take to resolve my dispute?
+    - When will my dispute be resolved?
+    - How much time does it take to settle a dispute?
+    - Timeline for dispute resolution
+    - How long is dispute process?
+    - Resolution timeframe
+    - When will dispute end?
+    - Expected resolution time
+    - Dispute processing duration
+    - Time to resolve issue
+    - How soon resolved?
+    - Dispute settlement timeline
+    - Length of resolution process
+    - When get dispute answer?
+    - Resolution completion time
+    - Dispute processing time
+    - How long to fix issue?
+    - Timeline for settlement
+    - Duration of dispute
+    - Resolution period length
+
+# Contact Information
+- intent: ask_contact_support
+  examples: |
+    - How can I contact customer support?
+    - I need to contact support. How can I do that?
+    - How do I get in touch with customer service?
+    - Contact information needed
+    - How to reach support?
+    - Ways to contact you
+    - Support contact details
+    - Customer service number
+    - How to reach help desk?
+    - Contact methods available
+    - Support team contact
+    - Ways to reach support
+    - Contact options available
+    - How to connect with help?
+    - Support contact info
+    - Reach customer service
+    - Contact details please
+    - Need support contact
+    - How to contact team?
+    - Ways to get help
+
+- intent: ask_customer_service_hours
+  examples: |
+    - What are your customer service hours?
+    - When can I contact customer support?
+    - What times are customer service available?
+    - Operating hours
+    - Support availability times
+    - When are you open?
+    - Service hours today
+    - Support schedule
+    - When to call support?
+    - Working hours support
+    - Customer service timing
+    - Available support hours
+    - When can I call?
+    - Support operation times
+    - Service availability
+    - Hours of operation
+    - Contact center hours
+    - Support team schedule
+    - Available calling hours
+    - When support available?
+
+- intent: ask_physical_location
+  examples: |
+    - Do you have a physical location where I can visit?
+    - Where is your physical office?
+    - Can I visit your office?
+    - Office location details
+    - Where are you located?
+    - Branch locations
+    - Physical address please
+    - Where can I visit?
+    - Office visit possible?
+    - Location of branches
+    - Where to find you?
+    - Physical presence
+    - Office address needed
+    - Can I come in person?
+    - Where to visit?
+    - Branch addresses
+    - Location details
+    - Visit in person where?
+    - Office locations list
+    - Where situated?
+
+# Legal and Compliance
+- intent: ask_debtor_rights
+  examples: |
+    - What rights do I have as a debtor?
+    - Can you explain my rights as a debtor?
+    - What are the rights of a debtor?
+    - Legal rights as debtor
+    - Debtor protection rights
+    - My rights explanation
+    - What am I entitled to?
+    - Rights under law
+    - Debtor legal status
+    - Protection as debtor
+    - Know your rights info
+    - Debtor entitlements
+    - Legal protections
+    - Rights information
+    - What can I expect?
+    - Legal rights details
+    - Consumer rights info
+    - Debtor privileges
+    - Rights explanation
+    - Legal entitlements
+
+- intent: ask_debt_collection_process
+  examples: |
+    - How does debt collection work?
+    - What is the process of collecting debt?
+    - How do you collect debts?
+    - Collection procedure
+    - Debt recovery process
+    - How collections work
+    - Collection steps explained
+    - Debt collection steps
+    - Recovery procedure
+    - Collection methods used
+    - Process explanation
+    - How you collect
+    - Collection approach
+    - Recovery methods
+    - Collection protocol
+    - Debt recovery steps
+    - Collection practices
+    - How you recover debt
+    - Collection system
+    - Recovery process steps
+
+- intent: ask_collection_notice
+  examples: |
+    - What should I do if I receive a collection notice?
+    - How do I respond to a collection notice?
+    - What steps should I take if I get a collection notice?
+    - Got collection letter
+    - Received collection notice
+    - Collection notice response
+    - How handle collection letter?
+    - Collection notice steps
+    - What to do with notice?
+    - Respond to collection
+    - Collection letter received
+    - Notice response needed
+    - Handle collection notice
+    - Collection notice action
+    - Steps after notice
+    - Dealing with notice
+    - Collection letter help
+    - Notice guidance needed
+    - Collection response steps
+    - React to notice how?
+
+# Knowledge Portal Queries
+- intent: ask_debt_management_info
+  examples: |
+    - Where can I find information about managing debt?
+    - Can you provide resources for managing debt?
+    - How do I learn about debt management?
+    - Debt management help
+    - Managing debt advice
+    - Debt handling tips
+    - Management strategies
+    - Debt control info
+    - Handle debt better
+    - Debt management guide
+    - Ways to manage debt
+    - Debt handling help
+    - Management resources
+    - Better debt control
+    - Debt advice needed
+    - Management techniques
+    - Debt control help
+    - Handle finances better
+    - Debt guidance info
+    - Management support
+
+- intent: ask_financial_education_resources
+  examples: |
+    - Do you have resources for financial education?
+    - Can you share some financial education materials?
+    - Where can I get financial education information?
+    - Financial learning resources
+    - Money management info
+    - Financial literacy help
+    - Education materials
+    - Financial knowledge
+    - Money education
+    - Learning about finance
+    - Financial guidance
+    - Money management help
+    - Financial information
+    - Education about money
+    - Finance learning
+    - Money knowledge
+    - Financial resources
+    - Learn about money
+    - Financial basics
+    - Money education help
+
+- intent: ask_common_mistakes
+  examples: |
+    - What are common mistakes to avoid when managing debt?
+    - What should I avoid when managing debt?
+    - What are the most frequent debt management mistakes?
+    - Typical debt errors
+    - Common debt pitfalls
+    - Debt mistakes to avoid
+    - Major debt errors
+    - Common problems
+    - What not to do
+    - Frequent mistakes
+    - Avoid these errors
+    - Common debt issues
+    - Management mistakes
+    - Typical problems
+    - Things to avoid
+    - Common pitfalls
+    - Major mistakes
+    - Frequent errors
+    - What to watch for
+    - Common wrong steps
+
+# Tools and Calculators
+- intent: ask_debt_calculator
+  examples: |
+    - Do you offer any debt repayment calculators?
+    - Where can I find a debt repayment calculator?
+    - Can I calculate my debt repayment options?
+    - Payment calculator location
+    - Where's the calculator?
+    - Debt calculation tools
+    - How to calculate payments?
+    - Need repayment calculator
+    - Calculate my installments
+    - Payment estimation tool
+    - Monthly payment calculator
+    - Calculate debt payments
+    - Repayment estimator
+    - Payment schedule calculator
+    - Interest calculator
+    - Calculate total payments
+    - Debt forecast tool
+    - Payment projection calculator
+    - Calculate debt timeline
+    - Repayment planning tool
+
+- intent: ask_budget_management
+  examples: |
+    - How can I budget effectively to manage my debt?
+    - What are the best budgeting methods for managing debt?
+    - How should I budget to pay off my debt?
+    - Budget planning help
+    - Effective budgeting tips
+    - Create debt payment budget
+    - Budget management advice
+    - How to plan my budget
+    - Budgeting strategies
+    - Money management help
+    - Budget organization tips
+    - Financial planning help
+    - Budget creation guide
+    - Debt budget planning
+    - Monthly budget help
+    - Budget balancing tips
+    - Financial organization
+    - Budget structuring help
+    - Expense planning guide
+    - Budget optimization tips
+
+- intent: ask_prioritize_debt_payments
+  examples: |
+    - What is the best way to prioritize debt payments?
+    - How do I know which debts to pay first?
+    - How can I prioritize my payments?
+    - Payment priority help
+    - Which debt first?
+    - Debt payment order
+    - Priority payment guide
+    - Payment scheduling help
+    - Order of payments
+    - Debt priority advice
+    - Payment hierarchy
+    - Strategic payment plan
+    - Debt ordering help
+    - Payment importance order
+    - Priority setting guide
+    - Payment arrangement help
+    - Strategic debt payment
+    - Optimal payment order
+    - Payment prioritization
+    - Debt ranking guide
+
+# Additional Queries: Updates and Notifications
+- intent: ask_account_change_notifications
+  examples: |
+    - How will I be notified about changes to my account?
+    - Will I be informed about any updates to my account?
+    - How do you notify me if something changes on my account?
+    - Account update alerts
+    - Change notification system
+    - How get account updates?
+    - Notification preferences
+    - Account alert settings
+    - Update communication method
+    - Change alerts system
+    - Account notifications
+    - Update alert preferences
+    - How receive notifications
+    - Account changes alerts
+    - Notification methods
+    - Update communication
+    - Change alert settings
+    - Account status updates
+    - Notification setup
+    - Alert preferences
+
+- intent: ask_payment_reminders
+  examples: |
+    - Can I receive reminders for upcoming payments?
+    - How do I set up payment reminders?
+    - Can you send me a reminder for my payments?
+    - Payment reminder setup
+    - Enable due date alerts
+    - Schedule payment reminders
+    - Regular payment alerts
+    - Due date notifications
+    - Payment notification setup
+    - Reminder system setup
+    - Payment alert preferences
+    - Due date reminder setup
+    - Payment memory aid
+    - Bill reminder setup
+    - Payment notification system
+    - Due date alert setup
+    - Bill payment reminders
+    - Payment deadline alerts
+    - Setup reminder system
+    - Enable payment alerts
+
+- intent: ask_postpone_payment
+  examples: |
+    - Can I postpone my payment?
+    - Is it possible to delay my payment?
+    - Can I make the payment later?
+    - I want to postpone my payment
+    - Need payment extension
+    - Delay payment request
+    - Payment postponement
+    - Can I pay later?
+    - Need more time to pay
+    - Payment date extension
+    - Extend payment deadline
+    - Push back payment date
+    - Reschedule payment
+    - Later payment possible?
+    - Payment delay request
+    - Need payment deferral
+    - Want to delay payment
+    - Payment extension needed
+    - Postpone due date
+    - Payment rescheduling
+
+- intent: report_payment_issue
+  examples: |
+    - There is something wrong with my payment
+    - I think there's a mistake with my payment
+    - My payment didn't go through correctly
+    - Payment error occurred
+    - Payment problem report
+    - Issue with transaction
+    - Payment not working
+    - Transaction problem
+    - Payment failure
+    - Payment processing issue
+    - Transaction error
+    - Failed payment report
+    - Payment didn't work
+    - Transaction trouble
+    - Payment system error
+    - Payment not processed
+    - Transaction failed
+    - Payment malfunction
+    - Payment error report
+    - Transaction issue report
+
+- intent: deny_responsibility
+  examples: |
+    - You are wrong
+    - I don't agree with this
+    - This is incorrect
+    - That information is wrong
+    - No, you're wrong
+    - This isn't right
+    - That's not correct
+    - Completely wrong
+    - Invalid information
+    - Not accurate
+    - Incorrect statement
+    - False information
+    - That's inaccurate
+    - Wrong assessment
+    - Mistake in information
+    - Error in details
+    - Not true at all
+    - Disagreeing with this
+    - This is false
+    - Wrong conclusion
+
+- intent: ask_accepted_banks
+  examples: |
+    - What bank do you accept?
+    - Which banks are supported for payments?
+    - What banks can I use to pay?
+    - Do you accept Maybank?
+    - Do you accept CIMB?
+    - Do you accept RHB?
+    - Do you accept Bank Islam?
+    - What Malaysian banks do you support?
+    - List of accepted banks
+    - Supported banking institutions
+    - Which banks work?
+    - Bank compatibility check
+    - Acceptable bank list
+    - Banking options available
+    - Supported bank accounts
+    - Bank payment options
+    - Valid bank list
+    - Banking partners list
+    - Accepted financial institutions
+    - Compatible banks list
+
+- intent: fallback
+  examples: |
+    - I don't understand
+    - I'm not sure
+    - I don't know
+    - Can you clarify that?
+    - That doesn't make sense
+    - I'm lost
+    - Could you repeat that?
+    - I didn't get that
+    - Sorry, what do you mean?
+    - Not following you
+    - Come again?
+    - Please explain
+    - What do you mean?
+    - Didn't understand that
+    - Need more clarity
+    - That's confusing
+    - Not clear to me
+    - Can you explain better?
+    - Don't quite get it
+    - Need explanation
+
+- intent: ask_postpone_payment
+  examples: |
+    - Can I postpone my payment?
+    - Is it possible to delay my payment?
+    - Can I make the payment later?
+    - I want to postpone my payment
+
+- intent: report_payment_issue
+  examples: |
+    - There is something wrong with my payment
+    - I think there's a mistake with my payment
+    - My payment didn't go through correctly
+    - Something is wrong with my payment
+    - There is an issue with my payment
+
+- intent: deny_responsibility
+  examples: |
+    - You are wrong
+    - I don't agree with this
+    - This is incorrect
+    - That information is wrong
+    - No, you're wrong
+
+- intent: ask_accepted_banks
+  examples: |
+    - What bank do you accept?
+    - Which banks are supported for payments?
+    - What banks can I use to pay?
+    - Do you accept Maybank?
+    - Do you accept CIMB?
+    - Do you accept RHB?
+    - Do you accept Bank Islam?
+    - What Malaysian banks do you support?
+    
+- intent: ask_accepted_credit_cards
+  examples: |
+    - What credit cards do you accept?
+    - Which credit cards are supported?
+    - Can I pay with Visa?
+    - Do you accept Mastercard?
+    - Do you accept Amex?
+    - Do you accept debit cards?
+    - What cards can I use for payment?
+
+- intent: ask_payment_postponement
+  examples: |
+    - Can I pay later?
+    - I need to postpone my payment.
+
+- intent: ask_debt_types
+  examples: |
+    - What are secured and unsecured debts?
+    - Can you explain secured debt?
+    - What is unsecured debt?
+    - How do secured and unsecured debts differ?
+
+- intent: ask_consequences_of_unpaid_debt
+  examples: |
+    - What happens if I don't pay my debt?
+    - Can you tell me about the consequences of unpaid debt?
+    - What are the effects of bad debt management?
+    - How does unpaid debt affect my credit score?
+
+- intent: ask_managing_reducing_debt
+  examples: |
+    - How can I manage my debt?
+    - What are some strategies for reducing debt?
+    - How do I effectively manage my finances?
+    - What steps can I take to reduce my debt?
+
+- intent: ask_general_debt_info
+  examples: |
+    - Tell me about debt.
+    - What do I need to know about debt management?
+    - Can you provide information on debt types?
+    - What are the best practices for handling debt?
+
+- intent: ask_legal_rights
+  examples: |
+    - What are my rights regarding debt collection?
+    - Can you tell me about my protections under debt collection laws?
+    - What rights do I have when dealing with debt collectors?
+    - How can I protect myself from unfair debt collection practices?
+    - What should I do if I feel my rights are being violated by a debt collector?
+
+- intent: ask_platform_info
+  examples: |
+    - What is Debtwise?
+    - Can you tell me about your platform?
+    - What services does Debtwise provide?
+    - How can I log in to my account?
+    - What features are available for debtors?
+    - What resources do you offer for managing debt?
+    - What are my rights as a debtor?
+    - How can I contact customer support?

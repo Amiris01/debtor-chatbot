@@ -1,0 +1,310 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - payment_faqs
+  - ask_next_payment_due
+  - ask_setup_automatic_payment
+  - ask_change_payment_method
+  - ask_partial_payment
+  - ask_repayment_options
+  - ask_negotiation_payment_terms
+  - ask_consequences_missed_payment
+  - ask_financial_assistance
+  - ask_total_debt_amount
+  - ask_debt_breakdown
+  - ask_interest_rate
+  - ask_changes_in_debt
+  - ask_dispute_account_error
+  - ask_billing_dispute_process
+  - ask_dispute_resolution_time
+  - ask_contact_support
+  - ask_customer_service_hours
+  - ask_physical_location
+  - ask_debtor_rights
+  - ask_debt_collection_process
+  - ask_collection_notice
+  - ask_debt_management_info
+  - ask_financial_education_resources
+  - ask_common_mistakes
+  - ask_debt_calculator
+  - ask_budget_management
+  - ask_prioritize_debt_payments
+  - ask_account_change_notifications
+  - ask_payment_reminders
+  - ask_payment_options
+  - ask_financial_aid
+  - deny_debt
+  - choose_full_payment
+  - choose_installment_payment
+  - choose_partial_payment
+  - fallback
+  - ask_payment_methods
+  - ask_postpone_payment
+  - report_payment_issue
+  - deny_responsibility
+  - ask_payment_postponement
+  - ask_accepted_banks
+  - ask_accepted_credit_cards
+  - ask_debt_types
+  - ask_consequences_of_unpaid_debt
+  - ask_managing_reducing_debt
+  - ask_general_debt_info
+  - ask_legal_rights
+  - ask_platform_info
+
+actions:
+  - action_check_if_slot_filled
+  - action_reset_total_amount
+  - action_handle_payment_options
+  - action_handle_financial_aid
+  - action_handle_deny_debt
+  - action_set_payment_option
+
+entities:
+  - payment_method
+  - total_amount
+  - interest_rate
+  - debt_breakdown
+
+slots:
+  payment_method:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: payment_method
+  
+  total_amount:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: total_amount
+
+  interest_rate:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: interest_rate
+
+  debt_breakdown:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: debt_breakdown
+
+  payment_option:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: payment_option
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "If you have anything, feel free to ask me."
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_payment_faqs:
+    - text: "We accept various payment methods, including credit cards, debit cards, and bank transfers. You can also use online payment platforms like PayPal."
+    - text: "Accepted payment methods include credit cards, debit cards, bank transfers, and services such as PayPal and Venmo. Let me know if you need help with a specific method."
+    - text: "You can pay using credit cards, debit cards, or bank transfers. We also accept payments through platforms like PayPal. What method would you like to know more about?"
+    - text: "We offer multiple payment options: credit cards, debit cards, bank transfers, and online services like PayPal. Just ask if you have questions about any of these!"
+
+  utter_ask_next_payment_due:
+    - text: "Your next payment is due on 31st this month. Please check your account for detailed information."
+
+  utter_ask_payment_methods:
+    - text: "We accept payments via credit card, debit card, bank transfer, and online payment services like PayPal. Please choose the most convenient option."
+
+  utter_ask_setup_automatic_payment:
+    - text: "Yes, you can set up automatic payments through your account settings. Visit the payment section and select 'Automatic Payment Setup'."
+
+  utter_ask_change_payment_method:
+    - text: "You can change your payment method by logging into your account and navigating to the 'Payment Methods' section."
+
+  utter_ask_partial_payment:
+    - text: "Yes, partial payments are accepted. However, please note that paying only part of the amount may result in interest or penalties depending on your agreement."
+
+  utter_ask_repayment_options:
+    - text: "We offer several repayment options, including standard payments, installments, and custom repayment plans. Please contact us for further assistance."
+
+  utter_ask_negotiation_payment_terms:
+    - text: "We are open to discussing your payment terms. Please contact our support team to explore available options."
+
+  utter_ask_consequences_missed_payment:
+    - text: "Missing a payment can result in additional fees or interest, and it may negatively affect your credit score. Please make sure to stay on top of payments to avoid these consequences."
+
+  utter_ask_financial_assistance:
+    - text: "Yes, we offer hardship programs and financial assistance for qualifying customers. Contact us to see if you’re eligible."
+
+  utter_ask_debt_breakdown:
+    - text: "Here’s a detailed breakdown of your debt: [debt breakdown details]. You can also view this information in your account."
+
+  utter_ask_interest_rate:
+    - text: "The interest rate on your debt is 7%. For more information, please refer to your loan agreement."
+
+  utter_ask_changes_in_debt:
+    - text: "There have been no recent changes to your debt amount. You can check your account for the latest updates."
+
+  utter_ask_dispute_account_error:
+    - text: "If you believe there’s an error in your account, please submit a dispute through our online portal or contact support, and we will investigate it for you."
+
+  utter_ask_billing_dispute_process:
+    - text: "To resolve billing disputes, submit a detailed report of the issue through your account or contact our support team. We aim to resolve disputes within 30 days."
+
+  utter_ask_dispute_resolution_time:
+    - text: "Typically, disputes take up to 30 days to resolve, depending on the complexity of the issue. We will keep you updated on the progress."
+
+  utter_ask_contact_support:
+    - text: "You can contact customer support by emailing support@example.com or calling 1-800-123-4567."
+
+  utter_ask_customer_service_hours:
+    - text: "Our customer service team is available Monday to Friday from 9 AM to 6 PM."
+
+  utter_ask_physical_location:
+    - text: "We have a physical office located at Kuala Lumpur. Feel free to find and visit us during our working hours."
+
+  utter_ask_debtor_rights:
+    - text: "As a debtor, you have the right to dispute inaccurate information, request validation of debt, and negotiate payment plans. For full details, please visit our rights page."
+
+  utter_ask_debt_collection_process:
+    - text: "Debt collection typically involves issuing notices, negotiating repayment terms, and potentially involving third-party collectors if necessary. Please contact us to discuss your situation."
+
+  utter_ask_collection_notice:
+    - text: "If you receive a collection notice, make sure to review it carefully and contact us if you have any questions or concerns. You can also dispute the notice if you believe it's incorrect."
+
+  utter_ask_debt_management_info:
+    - text: "You can find comprehensive information on debt management in our Knowledge Portal at https://debtwise.edu/."
+
+  utter_ask_financial_education_resources:
+    - text: "We offer several resources for financial education, including articles, webinars, and tools. Visit https://debtwise.edu/ to learn more."
+
+  utter_ask_common_mistakes:
+    - text: "Common mistakes include missing payments, ignoring interest rates, and not having a budget. Avoid these to stay on top of your debt management."
+
+  utter_ask_debt_calculator:
+    - text: "Yes, we provide a debt repayment calculator that you can use to estimate your payments. Visit https://debtwise.edu/ to try it out."
+
+  utter_ask_budget_management:
+    - text: "To budget effectively, start by listing all your expenses, prioritize debts with higher interest rates, and create a repayment plan. You can use our budgeting tools at https://debtwise.edu/."
+
+  utter_ask_prioritize_debt_payments:
+    - text: "The best way to prioritize debt payments is to focus on high-interest debts first while keeping up with minimum payments on others."
+
+  utter_ask_account_change_notifications:
+    - text: "You will receive notifications via email or SMS when there are changes to your account. You can update your notification preferences in your account settings."
+
+  utter_ask_payment_reminders:
+    - text: "You can set up payment reminders through your account by enabling SMS or email notifications for upcoming payments."
+
+  utter_total_debt:
+    - text: "Your total debt is {total_amount}."
+
+  utter_payment_options:
+    - text: "We offer various payment options including full payment, installments, and partial payments. How would you like to proceed?"
+
+  utter_financial_aid:
+    - text: "We do offer financial aid options. Would you like to discuss these options with a representative?"
+
+  utter_deny_debt:
+    - text: "If you believe this debt doesn't belong to you, we recommend contacting our support team to verify and dispute the debt."
+  
+  utter_ask_payment_method:
+    - text: "Would you like to proceed with full payment, installment, or partial payment?"
+
+  utter_acknowledge_payment_choice:
+    - text: "Great, we will proceed with {payment_option}. A representative will reach out to assist you with this option."
+
+  utter_fallback_payment_choice:
+    - text: "I didn't understand your choice. Please choose either 'full payment', 'installment', or 'partial payment'."
+
+  utter_ask_postpone_payment:
+    - text: "Yes, we can help you with postponing your payment. Please contact support for more details."
+
+  utter_report_payment_issue:
+    - text: "I'm sorry to hear about the issue with your payment. Could you please provide more details so we can assist you?"
+
+  utter_deny_responsibility:
+    - text: "I'm sorry to hear that. Let me double-check the details and get back to you."
+
+  utter_payment_postponement:
+    - text: |
+        You can request to postpone your payment, but please contact us to discuss the details of your request.
+
+  utter_ask_accepted_banks:
+    - text: |
+        We accept payments from most major banks in Malaysia, including:
+        - Maybank
+        - CIMB
+        - RHB
+        - Public Bank
+        - Bank Islam
+
+  utter_ask_accepted_credit_cards:
+    - text: |
+        We accept Visa, Mastercard, and American Express credit cards. We also accept major debit cards.
+
+  utter_ask_debt_types:
+    - text: |
+        Secured debt is backed by collateral, such as a house or a car, meaning the lender can take the asset if you fail to repay. Unsecured debt, on the other hand, is not tied to any specific asset, which means the lender cannot claim specific property if you default. Examples of unsecured debt include credit card debt and medical bills.
+
+  utter_ask_consequences_of_unpaid_debt:
+    - text: |
+        Unpaid debt can lead to serious consequences, including damage to your credit score, legal action from creditors, and additional fees and interest. In severe cases, it can result in wage garnishment or the seizure of assets.
+
+  utter_ask_managing_reducing_debt:
+    - text: |
+        To manage and reduce your debt, consider creating a budget, prioritizing high-interest debts, negotiating with creditors, and seeking financial counseling. Tools such as debt consolidation or a debt management plan may also be beneficial.
+
+  utter_ask_general_debt_info:
+    - text: |
+        Debt management involves understanding the types of debt you have and creating strategies to pay them off effectively. Key practices include monitoring your spending, making timely payments, and understanding your financial obligations.
+
+  utter_ask_legal_rights:
+    - text: |
+        As a debtor, you have several legal rights under the Fair Debt Collection Practices Act (FDCPA). These include:
+        - The right to be treated fairly and without harassment by debt collectors.
+        - The right to request verification of your debt, including details on the amount and the original creditor.
+        - The right to dispute a debt and seek validation if you believe it is not yours.
+        - The right to limit communication from debt collectors, including requesting that they cease contact.
+        - Protection against abusive, deceptive, or unfair practices during the collection process.
+        If you feel your rights are being violated, you may file a complaint with the Consumer Financial Protection Bureau (CFPB) or consult a legal professional.
+
+  utter_platform_info:
+    - text: "Debtwise is a knowledge portal designed for debtors to understand their rights and make informed financial decisions. It is powered by an AI chatbot that assists users with their queries."
+    
+forms:
+  debt_information_form:
+    required_slots:
+      - total_amount
+      - interest_rate
+      - debt_breakdown
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,328 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: payment FAQs flow
+  steps:
+    - intent: payment_faqs
+    - action: utter_payment_faqs
+
+# Story for next payment due inquiry
+- story: User asks about the next payment due
+  steps:
+    - intent: ask_next_payment_due
+    - action: utter_ask_next_payment_due
+
+# Story for payment methods inquiry
+- story: User asks about payment methods
+  steps:
+    - intent: ask_payment_methods
+    - action: utter_ask_payment_methods
+
+# Story for automatic payment setup inquiry
+- story: User asks about setting up automatic payments
+  steps:
+    - intent: ask_setup_automatic_payment
+    - action: utter_ask_setup_automatic_payment
+
+# Story for changing payment method
+- story: User asks to change payment method
+  steps:
+    - intent: ask_change_payment_method
+    - action: utter_ask_change_payment_method
+
+# Story for partial payment inquiry
+- story: User asks about partial payments
+  steps:
+    - intent: ask_partial_payment
+    - action: utter_ask_partial_payment
+
+# Story for repayment options
+- story: User asks for repayment options
+  steps:
+    - intent: ask_repayment_options
+    - action: utter_ask_repayment_options
+
+# Story for negotiating payment terms
+- story: User asks to negotiate payment terms
+  steps:
+    - intent: ask_negotiation_payment_terms
+    - action: utter_ask_negotiation_payment_terms
+
+# Story for consequences of missed payment
+- story: User asks about consequences of missing a payment
+  steps:
+    - intent: ask_consequences_missed_payment
+    - action: utter_ask_consequences_missed_payment
+
+# Story for financial assistance or hardship programs
+- story: User asks about financial assistance or hardship programs
+  steps:
+    - intent: ask_financial_assistance
+    - action: utter_ask_financial_assistance
+
+# Story for total debt amount
+- story: User asks for debt details
+  steps:
+    - intent: ask_total_debt_amount
+    - action: action_check_if_slot_filled
+    - action: utter_total_debt
+    - action: action_reset_total_amount
+
+# Story for debt breakdown
+- story: User asks for a breakdown of their debts
+  steps:
+    - intent: ask_debt_breakdown
+    - action: utter_ask_debt_breakdown
+
+# Story for interest rate on debt
+- story: User asks for the interest rate on their debt
+  steps:
+    - intent: ask_interest_rate
+    - action: utter_ask_interest_rate
+
+# Story for changes in debt amount
+- story: User asks if there are recent changes to their debt
+  steps:
+    - intent: ask_changes_in_debt
+    - action: utter_ask_changes_in_debt
+
+# Story for disputing an account error
+- story: User believes there's an error in their account
+  steps:
+    - intent: ask_dispute_account_error
+    - action: utter_ask_dispute_account_error
+
+# Story for billing dispute process
+- story: User asks about the billing dispute process
+  steps:
+    - intent: ask_billing_dispute_process
+    - action: utter_ask_billing_dispute_process
+
+# Story for dispute resolution time
+- story: User asks how long a dispute resolution will take
+  steps:
+    - intent: ask_dispute_resolution_time
+    - action: utter_ask_dispute_resolution_time
+
+# Story for contacting customer support
+- story: User asks how to contact customer support
+  steps:
+    - intent: ask_contact_support
+    - action: utter_ask_contact_support
+
+# Story for customer service hours
+- story: User asks for customer service hours
+  steps:
+    - intent: ask_customer_service_hours
+    - action: utter_ask_customer_service_hours
+
+# Story for physical location
+- story: User asks if there’s a physical location
+  steps:
+    - intent: ask_physical_location
+    - action: utter_ask_physical_location
+
+  # Story for debtor rights
+- story: User asks about their rights as a debtor
+  steps:
+    - intent: ask_debtor_rights
+    - action: utter_ask_debtor_rights
+# Story for debt collection process
+- story: User asks about the debt collection process
+  steps:
+    - intent: ask_debt_collection_process
+    - action: utter_ask_debt_collection_process
+# Story for receiving a collection notice
+- story: User asks what to do if they receive a collection notice
+  steps:
+    - intent: ask_collection_notice
+    - action: utter_ask_collection_notice
+# Story for debt management resources
+- story: User asks where to find debt management information
+  steps:
+    - intent: ask_debt_management_info
+    - action: utter_ask_debt_management_info
+# Story for financial education resources
+- story: User asks for financial education resources
+  steps:
+    - intent: ask_financial_education_resources
+    - action: utter_ask_financial_education_resources
+# Story for common mistakes in debt management
+- story: User asks about common mistakes in managing debt
+  steps:
+    - intent: ask_common_mistakes
+    - action: utter_ask_common_mistakes
+# Story for debt repayment calculators
+- story: User asks for debt repayment calculators
+  steps:
+    - intent: ask_debt_calculator
+    - action: utter_ask_debt_calculator
+# Story for budgeting to manage debt
+- story: User asks how to budget effectively to manage debt
+  steps:
+    - intent: ask_budget_management
+    - action: utter_ask_budget_management
+# Story for prioritizing debt payments
+- story: User asks how to prioritize debt payments
+  steps:
+    - intent: ask_prioritize_debt_payments
+    - action: utter_ask_prioritize_debt_payments
+# Story for account change notifications
+- story: User asks how they’ll be notified about account changes
+  steps:
+    - intent: ask_account_change_notifications
+    - action: utter_ask_account_change_notifications
+# Story for payment reminders
+- story: User asks for payment reminders
+  steps:
+    - intent: ask_payment_reminders
+    - action: utter_ask_payment_reminders
+
+- story: Handle debt details form
+  steps:
+    - active_loop: debt_information_form
+    - slot_was_set:
+        - total_amount: "5000 USD"
+    - slot_was_set:
+        - interest_rate: "5.5"
+    - slot_was_set:
+        - debt_breakdown: "Principal: 4000 USD, Interest: 1000 USD"
+    - action: utter_total_debt
+
+- story: Financial aid inquiry
+  steps:
+    - intent: ask_financial_aid
+    - action: utter_financial_aid
+
+- story: Debt denial
+  steps:
+    - intent: deny_debt
+    - action: utter_deny_debt
+
+- story: User asks about payment options
+  steps:
+    - intent: ask_payment_options
+    - action: utter_payment_options
+    - action: utter_ask_payment_method
+
+- story: User chooses full payment
+  steps:
+    - intent: choose_full_payment
+    - action: action_set_payment_option
+    - slot_was_set:
+        - payment_option: "full payment"
+    - action: utter_acknowledge_payment_choice
+
+- story: User chooses installment payment
+  steps:
+    - intent: choose_installment_payment
+    - action: action_set_payment_option
+    - slot_was_set:
+        - payment_option: "installment"
+    - action: utter_acknowledge_payment_choice
+
+- story: User chooses partial payment
+  steps:
+    - intent: choose_partial_payment
+    - action: action_set_payment_option
+    - slot_was_set:
+        - payment_option: "partial payment"
+    - action: utter_acknowledge_payment_choice
+
+- story: Invalid payment choice
+  steps:
+    - intent: fallback
+    - action: utter_fallback_payment_choice
+
+- story: User asks to postpone payment
+  steps:
+    - intent: ask_postpone_payment
+    - action: utter_ask_postpone_payment
+
+- story: User reports a payment issue
+  steps:
+    - intent: report_payment_issue
+    - action: utter_report_payment_issue
+
+- story: User denies responsibility
+  steps:
+    - intent: deny_responsibility
+    - action: utter_deny_responsibility
+
+- story: User asks to postpone payment
+  steps:
+    - intent: ask_payment_postponement
+    - action: utter_payment_postponement
+    
+- story: User reports payment issue
+  steps:
+    - intent: report_payment_issue
+    - action: utter_report_payment_issue
+
+- story: User asks about accepted banks
+  steps:
+    - intent: ask_accepted_banks
+    - action: utter_ask_accepted_banks
+
+- story: User asks about accepted credit cards
+  steps:
+    - intent: ask_accepted_credit_cards
+    - action: utter_ask_accepted_credit_cards
+
+- story: User asks about debt types
+  steps:
+    - intent: ask_debt_types
+    - action: utter_ask_debt_types
+
+- story: User asks about consequences of unpaid debt
+  steps:
+    - intent: ask_consequences_of_unpaid_debt
+    - action: utter_ask_consequences_of_unpaid_debt
+
+- story: User asks about managing and reducing debt
+  steps:
+    - intent: ask_managing_reducing_debt
+    - action: utter_ask_managing_reducing_debt
+
+- story: User asks for general debt information
+  steps:
+    - intent: ask_general_debt_info
+    - action: utter_ask_general_debt_info
+
+- story: User asks about legal rights in debt collection
+  steps:
+    - intent: ask_legal_rights
+    - action: utter_ask_legal_rights
+
+- story: User asks about the platform
+  steps:
+    - intent: ask_platform_info
+    - action: utter_platform_info

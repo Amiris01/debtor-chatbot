@@ -1,0 +1,67 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Respond to financial aid inquiry
+  steps:
+    - intent: ask_financial_aid
+    - action: utter_financial_aid
+
+- rule: Respond to debt denial
+  steps:
+    - intent: deny_debt
+    - action: utter_deny_debt
+
+- rule: Follow up on payment options
+  steps:
+    - intent: ask_payment_options
+    - action: utter_payment_options
+    - action: utter_ask_payment_method
+
+- rule: Handle full payment choice
+  steps:
+    - intent: choose_full_payment
+    - action: action_set_payment_option
+    - action: utter_acknowledge_payment_choice
+
+- rule: Handle installment payment choice
+  steps:
+    - intent: choose_installment_payment
+    - action: action_set_payment_option
+    - action: utter_acknowledge_payment_choice
+
+- rule: Handle partial payment choice
+  steps:
+    - intent: choose_partial_payment
+    - action: action_set_payment_option
+    - action: utter_acknowledge_payment_choice
+
+- rule: Handle invalid payment choice
+  steps:
+    - intent: fallback
+    - action: utter_fallback_payment_choice
+
+- rule: Handle request to postpone payment
+  steps:
+    - intent: ask_postpone_payment
+    - action: utter_ask_postpone_payment
+
+- rule: Handle payment issue report
+  steps:
+    - intent: report_payment_issue
+    - action: utter_report_payment_issue
+
+- rule: Handle user denying responsibility
+  steps:
+    - intent: deny_responsibility
+    - action: utter_deny_responsibility
